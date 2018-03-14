@@ -244,7 +244,7 @@ function build_tensorflow()
   }
 
   # Copy library files, if needs
-  [[ "${BAZEL_EXTRA_FLAGS}" == *"libtensorflow.so"* ]] && {
+  [[ "${BAZEL_EXTRA_FLAGS}" == *"libtensorflow"* ]] && {
     local output="/tmp/tensorflow_lib"
 
     # Clean and/or create output dir
@@ -260,9 +260,9 @@ function build_tensorflow()
     }
 
     # collect the library files.
-    cp bazel-bin/tensorflow/libtensorflow.so $output
-    cp bazel-bin/tensorflow/libtensorflow_framework.so $output
-    cp tensorflow/c/c_api.h $output
+    cp bazel-bin/tensorflow/libtensorflow.so $output || true
+    cp bazel-bin/tensorflow/libtensorflow_framework.so $output || true
+    cp tensorflow/c/c_api.h $output || true
 
     log_app_msg "Library files moved to $output"
   }
