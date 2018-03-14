@@ -261,6 +261,7 @@ function build_tensorflow()
 
     # collect the library files.
     cp bazel-bin/tensorflow/libtensorflow.so $output
+    cp bazel-bin/tensorflow/libtensorflow_framework.so $output
     cp tensorflow/c/c_api.h $output
 
     log_app_msg "Library files moved to $output"
