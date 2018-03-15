@@ -25,7 +25,7 @@
 # THE SOFTWARE.
 
 [ -f "$1" ] && {
-  source "$1"
+  source "$1" "$2"
 } || {
   echo "Use: $0 <config>"
   exit 1
