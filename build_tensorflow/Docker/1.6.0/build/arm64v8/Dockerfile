@@ -6,4 +6,4 @@ COPY ./ ./
 
 # Build Tensorflow on arm
 RUN chmod +x build_tensorflow.sh
-RUN ./build_tensorflow.sh configs/cpu-arm64v8.conf v1.6.0
+RUN ./build_tensorflow.sh configs/1.6.0/arm64v8/cpu.conf
