@@ -31,9 +31,8 @@ docker build --rm -t build-tensorflow:1.7.0-arm64v8 -f Docker/1.7.0/arm64v8/Dock
 Pre-built docker images are published to https://hub.docker.com/r/jessebenson/build-tensorflow for easy consumption.  Usable to retrieve the Tensorflow binaries:
 
 ```shell
-docker run -dit --name build jessebenson/build-tensorflow:arm32v7
-docker cp build:/tensorflow/libtensorflow.so .
-docker cp build:/tensorflow/libtensorflow_framework.so .
+docker run --rm -dit --name build jessebenson/build-tensorflow:arm32v7
+docker cp build:/tensorflow/. .
 docker stop build
 ```
 
